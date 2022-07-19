@@ -57,13 +57,13 @@ int main()
 
 	while (1)
 	{
-		dMilli(1000);
+		dMilli(100);
 		GPIOC->ODR &= ~(1 << 13); // SETS -- LED ON
 		GPIOB->BSRR |= (1 << 9);
-		
-		dMilli(1000);
+
+		dMilli(100);
 		GPIOC->ODR |= (1 << 13); // RESETS -- LED OFF
-		GPIOC->BSRR &= (1 << 9);
-		
+		GPIOB->BSRR |= (1 << (9 +16));
+
 	}
 }
